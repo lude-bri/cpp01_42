@@ -12,4 +12,13 @@
 
 #include "Zombie.hpp"
 
+//builder
+Zombie::Zombie() {};
 
+//descructor
+Zombie::~Zombie() {};
+
+void	Zombie::announce(void)
+{
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
