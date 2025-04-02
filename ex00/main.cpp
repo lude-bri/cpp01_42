@@ -12,3 +12,10 @@
 
 //main function cpp
 #include "Zombie.hpp"
+
+int	main(void)
+{
+	Zombie	Foo;
+
+	Foo.announce();
+}
