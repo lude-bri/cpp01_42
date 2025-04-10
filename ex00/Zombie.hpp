@@ -27,7 +27,10 @@ class Zombie {
 		std::string	name;
 };
 
+//creates a zombie, names it, and returns it so you can use it outside the outside of the function scope
 Zombie	*newZombie(std::string name);
+
+//creates a zombie, names it, and makes it announce itself
 void	randomChump(std::string name);
 
 #endif
