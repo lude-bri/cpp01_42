@@ -13,6 +13,8 @@
 //main function cpp
 #include "Zombie.hpp"
 
+//I have to implement a function called newZombie
+
 int	main(void)
 {
 	Zombie	Foo;
