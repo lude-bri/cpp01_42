@@ -15,8 +15,14 @@
 //builder
 Zombie::Zombie() {};
 
+//diff builder
+Zombie::Zombie(std::string name) : name(name) {};
+
 //descructor
-Zombie::~Zombie() {};
+Zombie::~Zombie() {
+
+	//print a message with the zombie's name
+};
 
 void	Zombie::announce(void)
 {

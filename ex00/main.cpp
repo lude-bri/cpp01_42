@@ -14,10 +14,23 @@
 #include "Zombie.hpp"
 
 //I have to implement a function called newZombie
+void	Zombie::init_zombieland()
+{
+	std::cout << "INIT ZOMBIELAND" << std::endl; 
+}
 
 int	main(void)
 {
-	Zombie	Foo;
+	std::string	newZombieName;
+	std::string	crappyZombie;
+	Zombie		*Foo;
 
-	Foo.announce();
+	Foo->init_zombieland();
+	std::getline(std::cin, newZombieName);
+
+	Foo = newZombie(newZombieName);
+	Foo->announce();
+
+	delete Foo;
+
 }

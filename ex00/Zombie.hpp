@@ -16,16 +16,22 @@
 # include <iostream>
 # include <string>
 
-class Zombie {
+//CLASSES
 
-	public:
-		Zombie();
-		~Zombie();
-		void	announce(void);
+class Zombie {
 
 	private:
 		std::string	name;
+	
+	public:
+		Zombie();
+		Zombie(std::string name);;
+		~Zombie();
+		void	announce(void);
+		void	init_zombieland();
 };
+
+//FUNCTIONS	
 
 //creates a zombie, names it, and returns it so you can use it outside the outside of the function scope
 Zombie	*newZombie(std::string name);
