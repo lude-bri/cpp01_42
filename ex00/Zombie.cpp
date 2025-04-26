@@ -22,6 +22,7 @@ Zombie::Zombie(std::string name) : name(name) {};
 Zombie::~Zombie() {
 
 	//print a message with the zombie's name
+	std::cout << this->name << std::endl;
 };
 
 //this functions announce the name of the zombie
