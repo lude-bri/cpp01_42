@@ -13,7 +13,6 @@
 #include "Zombie.hpp"
 
 void Zombie::init_zombieland() {
-    // Display your custom zombie ASCII art in blood red
     std::cout << GREEN << BOLD << "\n\n";
     std::cout << "                  _  /)\n";
     std::cout << "                 mo / )\n";
@@ -35,7 +34,6 @@ void Zombie::init_zombieland() {
     std::cout << "  *       | *   **    * **   |**      **\n";
     std::cout << "   \\))lude-bri/.,(//,,..,,\\||(,,.,\\\\,.((//\n";
     
-    // Warning banner
     std::cout << RESET << MAGENTA << "\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n";
     std::cout << BOLD << BLINK << RED << "   W A R N I N G  :  Z O M B I E L A N D  A C T I V A T E D\n";
     std::cout << RESET << MAGENTA << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n";
