@@ -14,7 +14,7 @@ NAME			= Zombie
 
 ###	Message Vars
 _NAME			= [$(MAG)cpp$(D)]
-_SUCCESS		= [$(GRN)Success!$(D)]
+_SUCCESS		= [$(GRN)Great Success!$(D)]
 _INFO			= [$(BLU)INFO$(D)]
 _SEP			= ======================
 
@@ -35,14 +35,14 @@ FILES += randomChump.cpp
 ### Paths
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
 
-OBJS	= $(SRC:$(SRC_PATH)/%.c=%$(BUILD_PATH)/%.o)
+OBJS	= $(SRC:$(SRC_PATH)/%.cpp=%$(BUILD_PATH)/%.o)
 
 #==============================================================================#
 #                              COMPILER & FLAGS                                #
 #==============================================================================#
 
-CPP				= c++
-CPPFLAGS		= -std=c++98
+CXX				= c++
+CXXFLAGS		= -std=c++98
 CFLAGS			= -Wall -Wextra -Werror -g
 
 #==============================================================================#
@@ -61,15 +61,15 @@ all: $(BUILD_PATH) $(NAME)
 
 $(NAME): $(BUILD_PATH) $(OBJS)
 	@echo "$(YEL)Compiling $(MAG)$(NAME)$(YEL) mandatory version$(D)"
-	$(CPP) $(CPPFLAGS) $(CFLAGS) $(OBJS) $(INC) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(CFLAGS) $(OBJS) $(INC) -o $(NAME)
 	@echo "[$(_SUCCESS) compiling $(MAG)$(NAME)$(D) $(YEL);D$(D)]"
 	@make --no-print-directory
 
 -include $(BUILD_PATH)/%.d
 
-$(BUILD_PATH)/%.o: $(SRC_PATH)/%.c
+$(BUILD_PATH)/%.o: $(SRC_PATH)/%.cpp
 	@echo -n "$(MAG)X$(D)"
-	$(CPP) $(CPPFLAGS) -MMD -MP -c $< -o $@
+	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
 
 $(BUILD_PATH):
 	$(MKDIR_P) $(BUILD_PATH)
@@ -100,31 +100,6 @@ vgdb: all $(NAME) $(TEMP_PATH)			## Debug w/ valgrind (memcheck) & gdb
 valgrind: all $(NAME) $(TEMP_PATH)			## Debug w/ valgrind (memcheck)
 	tmux set-option remain-on-exit on
 	tmux split-window -h "valgrind $(VAL_ARGS) $(VAL_LEAK) ./$(NAME) $(ARG)"
-
-massif: all $(TEMP_PATH)		## Run Valgrind w/ Massif (gather profiling information)
-	@TIMESTAMP=$(shell date +%Y%m%d%H%M%S); \
-	if [ -f massif.out.* ]; then \
-		mv -f massif.out.* $(TEMP_PATH)/massif.out.$$TIMESTAMP; \
-	fi
-	@echo " 🔎 [$(YEL)Massif Profiling$(D)]"
-	valgrind --tool=massif --time-unit=B ./$(NAME) $(ARG)
-	ms_print massif.out.*
-# Learn more about massif and ms_print:
-### https://valgrind.org/docs/manual/ms-manual.html
-
-get_log:
-	touch gdb.txt
-	@if command -v lnav; then \
-		lnav gdb.txt; \
-	else \
-		tail -f gdb.txt; \
-	fi
-
-vgdb_cmd: $(NAME) $(TEMP_PATH)
-	@printf "target remote | vgdb --pid=" > $(TEMP_PATH)/gdb_commands.txt
-	@printf "$(shell pgrep -f valgrind)" >> $(TEMP_PATH)/gdb_commands.txt
-	@printf "\n" >> $(TEMP_PATH)/gdb_commands.txt
-	@cat .vgdbinit >> $(TEMP_PATH)/gdb_commands.txt
 
 ##@ Clean-up Rules 󰃢
 
