@@ -22,7 +22,7 @@ void	Zombie::init_zombieland()
 int	main(void)
 {
 	std::string	newZombieName;
-	std::string	crappyZombie;
+	// std::string	crappyZombie;
 	Zombie		*Foo;
 
 	Foo->init_zombieland();
@@ -30,7 +30,5 @@ int	main(void)
 
 	Foo = newZombie(newZombieName);
 	Foo->announce();
-
 	delete Foo;
-
 }

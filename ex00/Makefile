@@ -35,7 +35,8 @@ FILES += randomChump.cpp
 ### Paths
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
 
-OBJS	= $(SRC:$(SRC_PATH)/%.cpp=%$(BUILD_PATH)/%.o)
+# OBJS	= $(SRC:$(SRC_PATH)/%.cpp=%$(BUILD_PATH)/%.o)
+OBJS = $(addprefix $(BUILD_PATH)/, $(FILES:.cpp=.o))
 
 #==============================================================================#
 #                              COMPILER & FLAGS                                #
