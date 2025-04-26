@@ -24,6 +24,7 @@ Zombie::~Zombie() {
 	//print a message with the zombie's name
 };
 
+//this functions announce the name of the zombie
 void	Zombie::announce(void)
 {
 	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
