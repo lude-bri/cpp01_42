@@ -22,13 +22,22 @@ void	Zombie::init_zombieland()
 int	main(void)
 {
 	std::string	newZombieName;
-	// std::string	crappyZombie;
 	Zombie		*Foo;
 
 	Foo->init_zombieland();
-	std::getline(std::cin, newZombieName);
-
-	Foo = newZombie(newZombieName);
-	Foo->announce();
-	delete Foo;
+	while (!std::cin.eof()) {
+		std::cout << "====================" << std::endl;
+		std::cout << "Pleaaassee... choose the name of your zombiieeee: " << std::endl;
+		std::getline(std::cin, newZombieName);
+		if (newZombieName == "exit")
+			break ;
+		std::cout << "====================" << std::endl;
+		std::cout << "Allocating " << newZombieName.c_str() << " in the Heap" << std::endl;
+		Foo = newZombie(newZombieName);
+		Foo->announce();
+		delete Foo;
+		std::cout << "====================" << std::endl;
+		std::cout << "Allocating " << newZombieName.c_str() << " in the Stack" << std::endl;
+		randomChump(newZombieName);
+	}
 }
