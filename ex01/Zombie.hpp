@@ -48,8 +48,6 @@ class Zombie {
 		static void	exit_zombieland();
 };
 
-
-Zombie	*newZombie(std::string name);
 Zombie	*zombieHorde(int N, std::string name);
 bool	isValid(const std::string& input);
 
