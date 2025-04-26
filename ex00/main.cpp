@@ -58,14 +58,14 @@ int main() {
             continue;
         }
 
-        // Heap allocation
+        //Alocation in the Heap
         printSeparator();
         std::cout << BOLD << GREEN << "=== HEAP ALLOCATION ===" << RESET << std::endl;
         Zombie* heapZombie = newZombie(zombieName);
         heapZombie->announce();
         delete heapZombie;
         
-        // Stack allocation
+        //Alocation in the Stack
         printSeparator();
         std::cout << BOLD << GREEN << "=== STACK ALLOCATION ===" << RESET << std::endl;
         randomChump(zombieName);
@@ -78,35 +78,3 @@ int main() {
     
     return 0;
 }
-//
-// int main() {
-//     
-// 	Zombie::init_zombieland();
-//     
-//     while (1) {
-//         std::string zombieName;
-//         
-// 		std::cout << "Pleaaaaasseee.... choooossee a zooombiiiee nameeee (or 'exit' to quit): ";
-//         if (!std::getline(std::cin, zombieName) || zombieName == "exit") {
-//             break;
-//         }
-//         
-//         if (zombieName.empty()) {
-//             std::cout << "Error: Zombie name cannot be empty!" << std::endl;
-//             continue;
-//         }
-//
-//         // Heap allocation
-//         std::cout << "\n=== Creating heap zombie ===" << std::endl;
-//         Zombie* heapZombie = newZombie(zombieName);
-//         heapZombie->announce();
-//         delete heapZombie;
-//         
-//         // Stack allocation
-//         std::cout << "\n=== Creating stack zombie ===" << std::endl;
-//         randomChump(zombieName);
-//     }
-//     
-//     std::cout << "\n=== Exiting Zombieland ===" << std::endl;
-//     return 0;
-// }
