@@ -10,4 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
 
+//builder
+Zombie::Zombie() {};
+
+//diff builder
+Zombie::Zombie(std::string name) : name(name) {
+	this->name = name;
+};
+
+//descructor
+Zombie::~Zombie() {
+	//print a message with the zombie's name
+	std::cout << "Destroying " << this->name << std::endl;
+};
+
+//this functions announce the name of the zombie
+void	Zombie::announce(void){
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
