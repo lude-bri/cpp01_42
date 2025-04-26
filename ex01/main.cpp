@@ -13,18 +13,34 @@
 #include "Zombie.hpp"
 
 void Zombie::init_zombieland() {
-    std::cout << RED << BOLD << "\n\n";
-    std::cout << "              _(_)_                          \n";
-    std::cout << "    @@@@      (_)@(_)   vVVVv    _     @@@@ \n";
-    std::cout << "   @@()@@ wWWWw (_)\\    (___)  _(_)_  @@()@@\n";
-    std::cout << "    @@@@  (___)     `|/    Y    (_)@   @@@@ \n";
-    std::cout << "     /      Y       \\|    \\|/    /(_)    \\  \n";
-    std::cout << "  \\ |     \\ |/       | / \\ | /  \\|/       | \n";
-    std::cout << "  \\\\|//   \\\\|///  \\\\\\|//\\\\\\|/// \\|///  \\\\\\|//\n";
+    // Display your custom zombie ASCII art in blood red
+    std::cout << GREEN << BOLD << "\n\n";
+    std::cout << "                  _  /)\n";
+    std::cout << "                 mo / )\n";
+    std::cout << "                 |/)\\)\n";
+    std::cout << "                  /\\_\n";
+    std::cout << "                  \\__|=\n";
+    std::cout << "                 (    )\n";
+    std::cout << "                 __)(__\n";
+    std::cout << "           _____/      \\_____\n";
+    std::cout << "          |                  ||\n";
+    std::cout << "          |  _     ___   _   ||\n";
+    std::cout << "          | | \\     |   | \\  ||\n";
+    std::cout << "          | |  |    |   |  | ||\n";
+    std::cout << "          | |_/     |   |_/  ||\n";
+    std::cout << "          | | \\     |   |    ||\n";
+    std::cout << "          | |  \\    |   |    ||\n";
+    std::cout << "          | |   \\. _|_. | .  ||\n";
+    std::cout << "          |                  ||\n";
+    std::cout << "  *       | *   **    * **   |**      **\n";
+    std::cout << "   \\))lude-bri/.,(//,,..,,\\||(,,.,\\\\,.((//\n";
+    
+    // Warning banner
     std::cout << RESET << MAGENTA << "\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n";
     std::cout << BOLD << BLINK << RED << "   W A R N I N G  :  Z O M B I E L A N D  A C T I V A T E D\n";
     std::cout << RESET << MAGENTA << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\n";
-    std::cout << YELLOW << "The ground shakes... a foul wind blows...\n";
+    
+	std::cout << YELLOW << "The ground shakes... a foul wind blows...\n";
     sleep(1);
     std::cout << "You hear distant moans getting closer...\n";
     sleep(1);
