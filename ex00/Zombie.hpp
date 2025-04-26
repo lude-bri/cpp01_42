@@ -43,6 +43,7 @@ class Zombie {
 		~Zombie();
 		void	announce();
 		static void	init_zombieland();
+		static void	exit_zombieland();
 };
 
 //FUNCTIONS	

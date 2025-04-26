@@ -36,23 +36,31 @@ void Zombie::init_zombieland() {
     std::cout << RESET;
 }
 
+void	Zombie::exit_zombieland() {
+    std::cout << MAGENTA << "\n==========================================" << RESET << std::endl;
+    std::cout << BOLD << RED << "=== EXITING ZOMBIELAND ===" << RESET << std::endl;
+    std::cout << MAGENTA << "==========================================" << RESET << std::endl;
+}
+
 void printSeparator() {
     std::cout << MAGENTA << "──────────────────────────────────────────" << RESET << std::endl;
 }
 
 int main() {
-    Zombie::init_zombieland();
     
+	Zombie::init_zombieland();
     while (1) {
         std::string zombieName;
         
         std::cout << BOLD << BLUE << std::endl << "Enter zombie name " << RESET << YELLOW << "(or 'exit' to quit)" << RESET 
                   << BOLD << BLUE << ": " << RESET;
 
+		//Get argument
         if (!std::getline(std::cin, zombieName) || zombieName == "exit") {
             break;
         }
-        
+       
+		//If ARG is empty
         if (zombieName.empty()) {
             std::cout << RED << "Error: Zombie name cannot be empty!" << RESET << std::endl;
             continue;
@@ -71,10 +79,6 @@ int main() {
         randomChump(zombieName);
         printSeparator();
     }
-    
-    std::cout << MAGENTA << "\n==========================================" << RESET << std::endl;
-    std::cout << BOLD << RED << "=== EXITING ZOMBIELAND ===" << RESET << std::endl;
-    std::cout << MAGENTA << "==========================================" << RESET << std::endl;
-    
+	Zombie::exit_zombieland();
     return 0;
 }
