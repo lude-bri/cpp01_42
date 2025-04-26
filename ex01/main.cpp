@@ -81,7 +81,7 @@ int main() {
             std::cout << RED << "Error: Zombie name cannot be empty!" << RESET << std::endl;
             continue;
         }
-		std::cout << BOLD << BLUE << std::endl << "Enter zombie horde size" << RESET << YELLOW << "(only numbers)" << RESET 
+		std::cout << BOLD << BLUE << std::endl << "Enter zombie horde size " << RESET << YELLOW << "(only numbers)" << RESET 
 			<< BOLD << BLUE << ": " << RESET;
 
 		if (!std::getline(std::cin, hordeSize) || hordeSize.empty() || !isValid(hordeSize)) {
@@ -89,13 +89,17 @@ int main() {
 			continue;
 		}
 		int N = atoi(hordeSize.c_str());
-        
-		printSeparator();
-		Zombie	*horde = zombieHorde(N, zombieName);
-		for (int i = 0; i < N; i++){
-			horde[i].announce();
+		
+		if (N == 0 || N == 1)
+			std::cout << RED << "Error: a HORDE means at least more than 1. Math is not mathing. Try again " << std::endl;
+		else {
+			printSeparator();
+			Zombie	*horde = zombieHorde(N, zombieName);
+			for (int i = 0; i < N; i++){
+				horde[i].announce();
+			}
+			delete[] horde;
 		}
-		delete[] horde;
     }
 	Zombie::exit_zombieland();
     return 0;
