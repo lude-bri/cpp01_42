@@ -23,7 +23,7 @@ Zombie::Zombie(std::string name) : name(name) {
 //descructor
 Zombie::~Zombie() {
 	//print a message with the zombie's name
-	std::cout << "Killing " << this->name << std::endl;
+	std::cout << "Destroying " << this->name << std::endl;
 };
 
 //this functions announce the name of the zombie

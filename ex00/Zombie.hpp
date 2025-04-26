@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <unistd.h>
 
 //COlORS
 
@@ -26,6 +27,8 @@
 # define CYAN    "\033[36m"
 # define RESET   "\033[0m"
 # define BOLD    "\033[1m"
+# define BLINK    "\033[5m"  // Add blinking text
+# define REVERSE  "\033[7m"  // Reverse video (white on red)
 
 //CLASSES
 
