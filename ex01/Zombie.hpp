@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 # include <unistd.h>
+# include <stdlib.h>
 
 //COlORS
 
@@ -42,7 +43,14 @@ class Zombie {
 		Zombie(std::string name);;
 		~Zombie();
 		void	announce();
+		void	setName(std::string name);
 		static void	init_zombieland();
+		static void	exit_zombieland();
 };
+
+
+Zombie	*newZombie(std::string name);
+Zombie	*zombieHorde(int N, std::string name);
+bool	isValid(const std::string& input);
 
 #endif
