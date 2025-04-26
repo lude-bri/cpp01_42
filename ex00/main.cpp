@@ -10,11 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//main function cpp
 #include "Zombie.hpp"
-#include <limits>
 
-//I have to implement a function called newZombie
 void Zombie::init_zombieland() {
     std::cout << "=== INITIALIZING ZOMBIELAND ===" << std::endl;
     std::cout << "Welcome to Zombie creation program!" << std::endl;
@@ -22,13 +19,9 @@ void Zombie::init_zombieland() {
     std::cout << "===============================" << std::endl << std::endl;
 }
 
-void clearInputBuffer() {
-    std::cin.clear();
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-}
-
 int main() {
-    Zombie::init_zombieland();
+    
+	Zombie::init_zombieland();
     
     while (1) {
         std::string zombieName;
@@ -39,7 +32,7 @@ int main() {
         }
         
         if (zombieName.empty()) {
-            std::cout << "Error: Zombie name cannot be empty!\n";
+            std::cout << "Error: Zombie name cannot be empty!" << std::endl;
             continue;
         }
 
@@ -57,29 +50,3 @@ int main() {
     std::cout << "\n=== Exiting Zombieland ===" << std::endl;
     return 0;
 }
-
-
-
-//
-// int	main(void)
-// {
-// 	std::string	newZombieName;
-// 	Zombie		*Foo;
-//
-// 	Foo->init_zombieland();
-// 	while (!std::cin.eof()) {
-// 		std::cout << "====================" << std::endl;
-// 		std::cout << "Pleaaassee... choose the name of your zombiieeee: " << std::endl;
-// 		std::getline(std::cin, newZombieName);
-// 		if (newZombieName == "exit")
-// 			break ;
-// 		std::cout << "====================" << std::endl;
-// 		std::cout << "Allocating " << newZombieName.c_str() << " in the Heap" << std::endl;
-// 		Foo = newZombie(newZombieName);
-// 		Foo->announce();
-// 		delete Foo;
-// 		std::cout << "====================" << std::endl;
-// 		std::cout << "Allocating " << newZombieName.c_str() << " in the Stack" << std::endl;
-// 		randomChump(newZombieName);
-// 	}
-// }
