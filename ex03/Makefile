@@ -27,6 +27,9 @@ TEMP_PATH		= .temp
 
 ### Files Source
 FILES = main.cpp
+FILES += Weapon.cpp
+FILES += HumanA.cpp
+FILES += HumanB.cpp
 
 ### Paths
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
