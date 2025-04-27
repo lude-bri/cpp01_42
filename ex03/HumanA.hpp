@@ -19,7 +19,7 @@
 class HumanA {
 
 	private:
-		std::string _weapon;
+		Weapon	&_weapon; //HumanA ALWAYS has a weapon
 		std::string	_name;
 
 	public:
