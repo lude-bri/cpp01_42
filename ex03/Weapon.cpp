@@ -13,8 +13,7 @@
 #include "Weapon.hpp"
 
 //constructor
-Weapon::Weapon(std::string weapon) {
-	this->_type = weapon;
+Weapon::Weapon(std::string weapon) : _type(weapon) {
 }
 
 //destructor
