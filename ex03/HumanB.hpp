@@ -6,12 +6,11 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 17:03:32 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/04/27 17:04:32 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/04/27 17:05:34 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
 #endif
