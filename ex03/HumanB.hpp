@@ -19,7 +19,9 @@
 class HumanB {
 
 	private:
-		
+		std::string _name;
+		Weapon		*_weapon; //Pointer can be NULL -> weapon not mandatory to HumanB
+
 	public:
 		HumanB(std::string name);
 		~HumanB();
