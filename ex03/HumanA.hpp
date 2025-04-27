@@ -19,7 +19,8 @@
 class HumanA {
 
 	private:
-		std::string	_weapon;
+		std::string _weapon;
+		std::string	_name;
 
 	public:
 		HumanA(std::string name, Weapon &weapon);

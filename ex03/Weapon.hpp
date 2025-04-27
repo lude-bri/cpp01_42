@@ -21,12 +21,11 @@ class Weapon {
 		std::string _type;
 
 	public:
-		Weapon();
+		Weapon(std::string weapon);
 		~Weapon();
 		
 		const std::string	&getType() const;
-		void		setType(std::string newValue, std::string type);
+		void		setType(std::string newValue);
 };
-
 
 #endif

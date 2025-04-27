@@ -10,4 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Weapon.hpp"
 
+//constructor
+Weapon::Weapon(std::string weapon) {
+	this->_type = weapon;
+}
+
+//destructor
+Weapon::~Weapon(){}
+
+//change the value of _type
+void	Weapon::setType(std::string newValue) {
+	this->_type = newValue;
+}
+
+void	Weapon::getType(){
+}
