@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 23:23:33 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/05/01 00:29:33 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/05/01 00:31:33 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Harl::Harl() {}
 Harl::~Harl() {
 }
 
+//Init para o MAP
 const	Harl::MemFun Harl::functions[4] = {
 	&Harl::debug,
 	&Harl::info,
