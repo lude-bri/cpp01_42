@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 23:23:30 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/04/30 23:27:49 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/04/30 23:28:20 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ class Harl {
 	public:
 		Harl();
 		~Harl();
+
+		void	complain(std::string level);
 };
 
 
