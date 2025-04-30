@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 21:05:09 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/04/30 21:28:37 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/04/30 21:43:19 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,29 @@
 
 # include <iostream>
 # include <fstream>
+# include <sstream>
+# include <string>
 
 typedef enum e_errorcode {
 	E_ARG,
 	E_FILE,
+	E_OUTFILE,
 }			errorcode;
 
 class Sed {
 	private:
 		std::string		_str1;
 		std::string		_str2;
+		std::string		_file;
 	
 	public:
 		Sed();
 		~Sed();
-
-		std::fstream	file;
-		std::fstream	newFile;
 		
-		void	setString(char *str1, char *str2);
-		void	error(int i);
+		void	setString(const std::string &str1, const std::string &str2);
+		void	setFile(const std::string &file);
+		void	error(int i) const;
+		void	processFile();
 };
 
 #endif

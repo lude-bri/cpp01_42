@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 21:09:54 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/04/30 21:28:39 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/04/30 21:44:00 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ Sed::Sed(){}
 Sed::~Sed(){}
 
 //setter of arguments in strings
-void	Sed::setString(char *str1, char *str2) {
+void	Sed::setString(const std::string &str1, const std::string &str2) {
 	_str1 = str1;
 	_str2 = str2;
 }
 
-void	Sed::error(int i) {
+void	Sed::error(int i) const {
 	if (i == E_FILE)
 		std::cerr << "Error: cannot open file" << std::endl;
 	if (i == E_ARG)
