@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 21:09:54 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/04/30 21:59:08 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/04/30 23:18:35 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	Sed::setFile(const std::string &file) {
 }
 
 void	Sed::processFile() {
-	//create an ifstream to read, verify is correct
-	std::ifstream	inputFile(_file.c_str());
+	//create an ifstream (inputFile) to read, verify is correct
+	std::ifstream inputFile(_file.c_str());
 	if (!inputFile) {
 		error(E_FILE);
 		return ;
