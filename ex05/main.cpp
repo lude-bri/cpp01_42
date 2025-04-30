@@ -6,8 +6,16 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 23:23:31 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/04/30 23:24:00 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/04/30 23:37:49 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Harl.hpp"
 
+
+int	main(void)
+{
+	Harl	harl;
+
+	harl.complain("DEBUG");
+}
