@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 23:23:30 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/05/01 00:15:56 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/05/01 00:27:34 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 
 # include <iostream>
 # include <string>
-
-typedef enum e_level {
-	DEBUG,
-	INFO,
-	WARNING,
-	ERROR,
-	UNKNOWN
-}		level;
 
 class Harl {
 
@@ -39,12 +31,11 @@ class Harl {
 		static const MemFun functions[4];
 
 		//Getter para ver os Enums
-		level getLevel(const std::string &levelStr);
+		int getLevel(const std::string &levelStr);
 
 	public:
 		Harl();
 		~Harl();
-
 		void	complain(std::string level);
 };
 

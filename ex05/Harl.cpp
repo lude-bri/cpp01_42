@@ -6,7 +6,7 @@
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 23:23:33 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/05/01 00:22:57 by lude-bri         ###   ########.fr       */
+/*   Updated: 2025/05/01 00:29:33 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,21 +50,20 @@ void Harl::error()
 	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
-level	Harl::getLevel(const std::string &levelStr) {
+int	Harl::getLevel(const std::string &levelStr) {
 	const	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < 4; i++) {
 		if (levels[i] == levelStr)
-			return static_cast<level>(i);
+			return i;
 	}
-	return UNKNOWN;
+	return -1;
 }
 
 void	Harl::complain(std::string level){
-	level lvl;
+	int		lvl = getLevel(level);
 
-	lvl = getLevel(level);
-	if (lvl != UNKNOWN && lvl >= DEBUG && lvl <= ERROR)
+	if (lvl >= 0 && lvl <= 4)
 		(this->*functions[lvl])();
 	else
 		std::cerr << "[ Probably complaining about insignificant problems ]" << std::endl;
