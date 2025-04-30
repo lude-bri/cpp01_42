@@ -18,14 +18,14 @@
 class Weapon {
 
 	private:
-		std::string _type;
+		std::string _type; //which is a string
 
 	public:
 		Weapon(std::string weapon);
 		~Weapon();
 		
-		const std::string	&getType() const;
-		void		setType(std::string newValue);
+		const std::string	&getType() const; //returns a constant reference to type
+		void		setType(std::string newValue); //sets type using the new value passed as parameter
 };
 
 #endif
