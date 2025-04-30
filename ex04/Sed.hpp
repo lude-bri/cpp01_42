@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 20:53:13 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/04/30 21:29:08 by lude-bri         ###   ########.fr       */
+/*   Created: 2025/04/30 21:05:09 by lude-bri          #+#    #+#             */
+/*   Updated: 2025/04/30 21:28:37 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#ifndef SED_HPP
+# define SED_HPP
 
-int	main(int ac, char **av)
-{
-	Sed		replace;
+# include <iostream>
+# include <fstream>
 
-	if (ac == 4)
-	{
+typedef enum e_errorcode {
+	E_ARG,
+	E_FILE,
+}			errorcode;
 
-		replace.setString(av[2], av[3]);
-		replace.file.open(av[1], std::ios::in);
-		if (!replace.file)
-			replace.error(E_FILE);
-	}
-	else
-		replace.error(E_ARG);
-}
+class Sed {
+	private:
+		std::string		_str1;
+		std::string		_str2;
+	
+	public:
+		Sed();
+		~Sed();
+
+		std::fstream	file;
+		std::fstream	newFile;
+		
+		void	setString(char *str1, char *str2);
+		void	error(int i);
+};
+
+#endif

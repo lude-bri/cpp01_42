@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Sed.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lude-bri <lude-bri@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 20:53:13 by lude-bri          #+#    #+#             */
-/*   Updated: 2025/04/30 21:29:08 by lude-bri         ###   ########.fr       */
+/*   Created: 2025/04/30 21:09:54 by lude-bri          #+#    #+#             */
+/*   Updated: 2025/04/30 21:28:39 by lude-bri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
-int	main(int ac, char **av)
-{
-	Sed		replace;
+//constructor
+Sed::Sed(){}
 
-	if (ac == 4)
-	{
+//destructor
+Sed::~Sed(){}
 
-		replace.setString(av[2], av[3]);
-		replace.file.open(av[1], std::ios::in);
-		if (!replace.file)
-			replace.error(E_FILE);
-	}
-	else
-		replace.error(E_ARG);
+//setter of arguments in strings
+void	Sed::setString(char *str1, char *str2) {
+	_str1 = str1;
+	_str2 = str2;
+}
+
+void	Sed::error(int i) {
+	if (i == E_FILE)
+		std::cerr << "Error: cannot open file" << std::endl;
+	if (i == E_ARG)
+		std::cerr << "Error: Try <filename> <str1> <str2>" << std::endl;
 }
