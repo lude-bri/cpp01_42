@@ -9,7 +9,7 @@ SHELL	:= bash
 #                                     NAMES                                    #
 #==============================================================================#
 
-NAME			= Sed
+NAME			= Harl
 
 ###	Message Vars
 _NAME			= [$(MAG)cpp$(D)]
@@ -27,7 +27,7 @@ TEMP_PATH		= .temp
 
 ### Files Source
 FILES = main.cpp
-FILES += Sed.cpp
+FILES += Harl.cpp
 
 ### Paths
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
