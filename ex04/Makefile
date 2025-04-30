@@ -17,6 +17,7 @@ TEMP_PATH		= .temp
 
 ### Files Source
 FILES = main.cpp
+FILES += Sed.cpp
 
 ### Paths
 SRC		= $(addprefix $(SRC_PATH)/, $(FILES))
