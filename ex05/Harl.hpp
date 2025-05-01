@@ -30,7 +30,7 @@ class Harl {
 		//array de funcoes
 		static const MemFun functions[4];
 
-		//Getter para ver os Enums
+		//Getter das functions
 		int getLevel(const std::string &levelStr);
 
 	public:
