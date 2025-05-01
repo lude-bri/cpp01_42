@@ -68,15 +68,6 @@ int	Harl::getLevel(const std::string &levelStr) {
 	return -1;
 }
 
-// void	Harl::complain(std::string level){
-// 	int		lvl = getLevel(level);
-//
-// 	if (lvl >= 0 && lvl <= 4)
-// 		(this->*functions[lvl])();
-// 	else
-// 		std::cerr << "[ Probably complaining about insignificant problems ]" << std::endl;
-// }
-
 void	Harl::complain(std::string level) {
 	int		lvl = getLevel(level);
 

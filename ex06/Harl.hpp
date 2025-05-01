@@ -12,11 +12,9 @@ class Harl {
 		void	warning(void);
 		void	error(void);
 
-		//pointer para a funcao membro
 		typedef void (Harl::*MemFun)(void);
-
-		//array de funcoes
 		static const MemFun functions[4];
+
 	public:
 		Harl();
 		~Harl();
