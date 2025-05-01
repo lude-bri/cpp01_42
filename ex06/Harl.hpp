@@ -17,14 +17,11 @@ class Harl {
 
 		//array de funcoes
 		static const MemFun functions[4];
-
-		//Getter para ver os Enums
-		int getLevel(const std::string &levelStr);
-
 	public:
 		Harl();
 		~Harl();
 		void	complain(std::string level);
+		int		getLevel(const std::string &levelStr);
 };
 
 #endif

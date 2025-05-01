@@ -9,7 +9,7 @@ SHELL	:= bash
 #                                     NAMES                                    #
 #==============================================================================#
 
-NAME			= Harl
+NAME			= harlFilter
 
 ###	Message Vars
 _NAME			= [$(MAG)cpp$(D)]
