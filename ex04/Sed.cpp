@@ -47,6 +47,8 @@ void	Sed::processFile() {
 	//read line by line and replace str1 to str2
 	std::string	line;
 	while (std::getline(inputFile, line)) {
+		if (line.empty())
+			error(E_EMPTY);
 		size_t	i = 0;
 		while ((i = line.find(_str1, i)) != std::string::npos) {
 			line.erase(i, _str1.length());
@@ -64,5 +66,9 @@ void	Sed::error(int i) const {
 	if (i == E_FILE)
 		std::cerr << "Error: cannot open file" << std::endl;
 	if (i == E_ARG)
-		std::cerr << "Error: Try <filename> <str1> <str2>" << std::endl;
+		std::cerr << "Error: try <filename> <str1> <str2>" << std::endl;
+	if (i == E_EMPTY)
+		std::cerr << "Error: empty file"<< std::endl;
+	if (i == E_OUTFILE)
+		std::cerr << "Error: cannot create a .replace" << std::endl;
 }

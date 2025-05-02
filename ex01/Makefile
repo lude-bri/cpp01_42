@@ -68,7 +68,7 @@ $(NAME): $(BUILD_PATH) $(OBJS)
 
 $(BUILD_PATH)/%.o: $(SRC_PATH)/%.cpp
 	@echo -n "$(MAG)X$(D)"
-	$(CXX) $(CXXFLAGS) -MMD -MP -c $< -o $@
+	$(CXX) $(CXXFLAGS) -MMD -MP -c -g $< -o $@
 
 $(BUILD_PATH):
 	$(MKDIR_P) $(BUILD_PATH)

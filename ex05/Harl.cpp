@@ -58,6 +58,7 @@ void Harl::error()
 	std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 	std::cout << std::endl;
 }
+
 int	Harl::getLevel(const std::string &levelStr) {
 	const	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 

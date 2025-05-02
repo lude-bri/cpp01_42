@@ -21,6 +21,7 @@
 typedef enum e_errorcode {
 	E_ARG,
 	E_FILE,
+	E_EMPTY,
 	E_OUTFILE,
 }			errorcode;
 
