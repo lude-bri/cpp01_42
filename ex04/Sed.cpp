@@ -46,9 +46,10 @@ void	Sed::processFile() {
 
 	//read line by line and replace str1 to str2
 	std::string	line;
+	bool		count = false;
 	while (std::getline(inputFile, line)) {
-		if (line.empty())
-			error(E_EMPTY);
+
+		count = true;
 		size_t	i = 0;
 		while ((i = line.find(_str1, i)) != std::string::npos) {
 			line.erase(i, _str1.length());
@@ -57,6 +58,8 @@ void	Sed::processFile() {
 		}
 		outputFile << line << std::endl;
 	}
+	if (line.empty() && count == false)
+		error(E_EMPTY);
 	inputFile.close();
 	outputFile.close();
 }

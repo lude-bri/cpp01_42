@@ -21,7 +21,9 @@ Zombie::Zombie(std::string name) : _name(name) {};
 //descructor
 Zombie::~Zombie() {
 	//print a message with the zombie's name
+#ifdef DEBUG
 	std::cout << RED << "💀 Sending " << _name << " back to Hell "<< RESET <<std::endl;
+#endif
 };
 
 //this functions announce the name of the zombie

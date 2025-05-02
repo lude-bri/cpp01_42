@@ -82,6 +82,10 @@ $(TEMP_PATH):
 
 ##@ Debug Rules 
 
+debug: CXX = g++
+debug: CXXFLAGS += -D DEBUG
+debug: fclean all
+
 gdb: all $(NAME) $(TEMP_PATH)			## Debug w/ gdb
 	tmux split-window -h "gdb --tui --args ./$(NAME)"
 	tmux resize-pane -L 5
