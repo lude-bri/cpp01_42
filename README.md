@@ -8,19 +8,6 @@
 
 This module explores fundamental memory concepts in C++, such as memory allocation (stack vs heap), pointers to members, references, and control flow via switch statements. It also delves into memory hierarchy and layout, offering insight into how C++ interacts with low-level computer architecture.
 
-<!-------Index-------->
-
-## Index
-
-<ul> <li><strong><a href="#1-memory-allocation" style="color:white">1. Memory Allocation</a></strong></li> <ul style="list-style-type:disc"> 
-<li><a href="#11-stack-vs-heap">1.1. Stack vs Heap</a></li> 
-<li><a href="#12-memory-layout">1.2. Memory Layout</a></li> </ul> 
-<li><strong><a href="#2-memory-hierarchy" style="color:white">2. Memory Hierarchy</a></strong></li> <ul style="list-style-type:disc"> 
-<li><a href="#21-types-of-memory">2.1. Types of Memory</a></li> </ul> 
-<li><strong><a href="#3-pointers-to-members" style="color:white">3. Pointers to Members</a></strong></li> 
-<li><strong><a href="#4-references" style="color:white">4. References</a></strong></li> 
-<li><strong><a href="#5-switch-statements" style="color:white">5. Switch Statements</a></strong></li>
-<li><strong><a href="#references" style="color:white">References</a></strong></li> </ul>
 
 # 1. Memory System and Memory Allocation
 
@@ -153,8 +140,47 @@ The memory layout refers to how memory is structured and organized within a sing
 |        Text              | (Code Segment)
 +---------------------------+
 ```
+### 1. Text Segment
+* Contains the actual compiled machine code (instructions).
+* Read-only and executable to prevent accidental modification.
+* Shared between processes using the same program.
 
-# 3. Pointers to Members
-# 4. References
-# 5. Switch Statements
-# References
+### 2. Data Segment
+* Stores global and static variables that are explicitly initialized.
+* For example: `int x = 42`;
+  
+### 3. BSS Segment (Uninitialized Data)
+* BStores global and static variables that are declared but not initialized.
+* For example: `static int y`;
+* Initialized to zero at runtime.
+  
+### 4. Heap
+* Used for dynamic memory allocation (new, malloc).
+* Grows upwards in memory as more memory is requested.
+* Managed manually by the programmer; failure to free memory leads to memory leaks.
+  
+### 5. Stack
+* Used for local variables, function parameters, and return addresses.
+* Grows downward (opposite to the heap).
+* Managed automatically — memory is freed when a function call ends.
+  
+> 🧠 Proper understanding of memory layout is essential for avoiding issues like segmentation faults, memory leaks, buffer overflows, and undefined behavior.
+
+## 3.1. Memory Management Strategies 
+
+C++ gives you low-level control over memory, but with that comes responsibility. There are three main approaches:
+
+**1. Static Allocation**
+* Fixed memory assigned at compile time
+* **Example**: `global/static variables`
+
+**2. Stack Allocation**
+* Memory allocated when a function is called, automatically freed
+* Fast and safe
+* **Example**: local variables
+  
+**3. Dynamic Allocation**
+* Memory manually allocated at runtime (`new` / `malloc`)
+* Must be manually freed (`delete` / `free`)
+* Allows flexible use of memory, but error-prone
+
