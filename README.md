@@ -8,7 +8,6 @@
 
 This module explores fundamental memory concepts in C++, such as memory allocation (stack vs heap), pointers to members, references, and control flow via switch statements. It also delves into memory hierarchy and layout, offering insight into how C++ interacts with low-level computer architecture.
 
-
 # 1. Memory System and Memory Allocation
 
 Before diving into the concepts of Stack and Heap, it’s important to first understand the broader idea of a memory system.
